@@ -71,6 +71,7 @@ $('.minus').on('click', function () {
 		parent.find('.counter').text(product.count)
 	}
 	console.log(cart)
+	$(document).trigger('checkCart')
 })
 
 function updateCounter(id, operator) {
