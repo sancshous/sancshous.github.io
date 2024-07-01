@@ -5,33 +5,56 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="inner">
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn1">Add</button>
+			<div class="row">
+				<div class="item">
+					<div class="img-container">
+						<img src="burger.svg" alt="" class="img">
+						<div style="display: none;" class="counter"></div>
+					</div>
+					<div class="item-info" id="food1"><span class="item-name"></span><span class="item-price"></span></div>
+					<button class="btn">Add</button>
+					<div style="display: none;" class="price">
+						<img src="minus.svg" class="minus">
+						<img src="plus.svg" class="plus">
+					</div>
+				</div>
+				<div class="item">
+					<div class="img-container">
+						<img src="burger.svg" alt="" class="img">
+						<div style="display: none;" class="counter"></div>
+					</div>
+					<div class="item-info" id="food2"><span class="item-name"></span><span class="item-price"></span></div>
+					<button class="btn">Add</button>
+					<div style="display: none;" class="price">
+						<img src="minus.svg" class="minus">
+						<img src="plus.svg" class="plus">
+					</div>
+				</div>
 			</div>
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn2">Add</button>
+			<div class="row">
+				<div class="item">
+					<img src="burger.svg" alt="" class="img">
+					<button class="btn" id="btn3">Add</button>
+				</div>
+				<div class="item">
+					<img src="burger.svg" alt="" class="img">
+					<button class="btn" id="btn4">Add</button>
+				</div>
 			</div>
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn3">Add</button>
-			</div>
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn4">Add</button>
-			</div>
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn5">Add</button>
-			</div>
-			<div class="item">
-				<img src="burger.svg" alt="" class="img">
-				<button class="btn" id="btn6">Add</button>
+			<div class="row">
+				<div class="item">
+					<img src="burger.svg" alt="" class="img">
+					<button class="btn" id="btn5">Add</button>
+				</div>
+				<div class="item">
+					<img src="burger.svg" alt="" class="img">
+					<button class="btn" id="btn6">Add</button>
+				</div>
 			</div>
 		</div>
 	</div>
