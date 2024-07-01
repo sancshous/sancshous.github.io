@@ -84,7 +84,7 @@ function updateCounter(id, operator) {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(cart);
+	tg.sendData(JSON.stringify(cart));
 });
 
 /*
