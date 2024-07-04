@@ -59,6 +59,8 @@ body {
 .price {
 	display: flex;
 	align-items: center;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
 }
 
 .item-price {
@@ -68,6 +70,8 @@ body {
 
 .plus, .minus {
 	cursor: pointer;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
 }
 
 .counter {
