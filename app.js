@@ -85,6 +85,12 @@ function updateCounter(id, operator) {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	var first_name = tg.initDataUnsafe.user.first_name
+    var last_name = tg.initDataUnsafe.user.last_name
+	cart["user"] = {
+		first_name: first_name,
+		last_name: last_name
+	}
 	tg.sendData(JSON.stringify(cart));
 });
 
