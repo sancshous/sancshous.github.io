@@ -2,6 +2,7 @@ body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
+	font-weight: 400;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
@@ -60,7 +61,7 @@ body {
 .price {
 	display: flex;
 	align-items: center;
-	color: var(--tg-theme-text-color);
+	color: white;
 	background: var(--tg-theme-bg-color);
 }
 

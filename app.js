@@ -98,12 +98,15 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 			totalPrice += (Number(element.product.price) * element.count)
 			var div = $('<div class="cart-row">');
 			var name = $(`<span><strong>${element.product.name}</strong></span>`)
-			var count = $(`<span><strong>${element.count}x</strong></span>`)
+			var count = $(`<span style="margin-left: 3px; color: #ebad5b;"><strong>${element.count}x</strong></span>`)
 			var price = $(`<span style="margin-left: auto;"><strong>${element.product.price}₽</strong></span>`)
 			div.append(name, count, price);
 			cartContainer.append(div);
 		});
 		tg.MainButton.setText(`Итого ${totalPrice}₽`);
+		cart.push({
+			comment: $('.cart-comment').val()
+		})
 		ready = true;
 	}
 });
