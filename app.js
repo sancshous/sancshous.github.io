@@ -18,8 +18,9 @@ let products = [
 	}
 ]
 
-let item = {};
-let cart = []
+let ready = false;
+let cart = [];
+
 
 $('.btn').on('click', function () {
 	var parent = $(this).parent();
@@ -36,6 +37,7 @@ $('.btn').on('click', function () {
 		}
 	)
 	console.log(cart)
+
 	$(document).trigger('checkCart')
 })
 
@@ -43,7 +45,7 @@ $(document).on('checkCart', function () {
 	if(cart.length == 0) {
 		tg.MainButton.hide();
 	} else {
-		tg.MainButton.setText("Заказать");
+		tg.MainButton.setText("Корзина")
 		tg.MainButton.show();
 	}
 })
@@ -85,7 +87,25 @@ function updateCounter(id, operator) {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(JSON.stringify(cart));
+	if(ready)
+		tg.sendData(JSON.stringify(cart));
+	else {
+		$('.container').hide()
+		$('.cart').show();
+		var cartContainer = $('.cart-container')
+		var totalPrice = 0;
+		cart.forEach(element => {
+			totalPrice += (Number(element.product.price) * element.count)
+			var div = $('<div class="cart-row">');
+			var name = $(`<span><strong>${element.product.name}</strong></span>`)
+			var count = $(`<span><strong>${element.count}x</strong></span>`)
+			var price = $(`<span style="margin-left: auto;"><strong>${element.product.price}₽</strong></span>`)
+			div.append(name, count, price);
+			cartContainer.append(div);
+		});
+		tg.MainButton.setText(`Итого ${totalPrice}₽`);
+		ready = true;
+	}
 });
 
 /*
