@@ -87,8 +87,12 @@ function updateCounter(id, operator) {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	if(ready)
+	if(ready) {
+		cart.push({
+			comment: $('.cart-comment').val()
+		})
 		tg.sendData(JSON.stringify(cart));
+	}
 	else {
 		$('.container').hide()
 		$('.cart').show();
@@ -104,9 +108,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 			cartContainer.append(div);
 		});
 		tg.MainButton.setText(`Итого ${totalPrice}₽`);
-		cart.push({
-			comment: $('.cart-comment').val()
-		})
 		ready = true;
 	}
 });
