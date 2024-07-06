@@ -79,6 +79,8 @@ $('.minus').on('click', function () {
 $('.edit-btn').on('click', function () {
 	$('.cart').hide();
 	$('.container').show()
+	ready = false;
+	tg.MainButton.setText("Корзина")
 })
 
 function updateCounter(id, operator) {
