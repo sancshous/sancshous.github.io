@@ -99,7 +99,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 			var div = $('<div class="cart-row">');
 			var name = $(`<span><strong>${element.product.name}</strong></span>`)
 			var count = $(`<span style="margin-left: 3px; color: #ebad5b;"><strong>${element.count}x</strong></span>`)
-			var price = $(`<span style="margin-left: auto;"><strong>${element.product.price}₽</strong></span>`)
+			var price = $(`<span style="margin-left: auto;"><strong>${Number(element.product.price) * element.count}₽</strong></span>`)
 			div.append(name, count, price);
 			cartContainer.append(div);
 		});
