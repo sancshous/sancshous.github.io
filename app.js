@@ -80,6 +80,8 @@ $('.edit-btn').on('click', function () {
 	$('.cart').hide();
 	$('.container').show()
 	ready = false;
+	var cartContainer = $('.cart-container')
+	cartContainer.empty()
 	tg.MainButton.setText("Корзина")
 })
 
