@@ -76,6 +76,11 @@ $('.minus').on('click', function () {
 	$(document).trigger('checkCart')
 })
 
+$('.edit-btn').on('click', function () {
+	$('.cart').hide();
+	$('.container').show()
+})
+
 function updateCounter(id, operator) {
 	var product = cart.find(elem => elem.product.id == id)
 	if(product)
