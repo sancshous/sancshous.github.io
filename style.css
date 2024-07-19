@@ -1,15 +1,15 @@
 body {
+	display: flex;
+	justify-content: center;
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
 	font-weight: 400;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
-}
-
-.container {
-	max-width: 390px;
 }
 
 .inner {
@@ -26,7 +26,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-width: 200px;
+	min-width: 9vw;
 }
 
 .btn, .minus {
@@ -112,9 +112,14 @@ body {
 	transform: scale(1.2);
 }
 
+.img {
+	width: 5vw;
+	height: 8vh;
+}
+
 .img-container {
-	width: 100px;
-	height: 100px;
+	width: 6vw;
+	height: 8vh;
 	display: flex;
 }
 
