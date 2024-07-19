@@ -26,7 +26,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-width: 9vw;
+	min-width: 13vw;
+	width: 100%;
 }
 
 .btn, .minus {
@@ -74,7 +75,14 @@ body {
 .item-info {
 	display: flex;
 	align-items: center;
-	margin-left: 15px;
+	/* margin-left: 15px; */
+	font-size: 0.9rem
+}
+
+.item-name {
+	display: flex;
+	justify-content: center;
+	width: 18vw;
 }
 
 .price {
@@ -113,13 +121,13 @@ body {
 }
 
 .img {
-	width: 5vw;
-	height: 8vh;
+	width: 7vw;
+	height: 10vh;
 }
 
 .img-container {
-	width: 6vw;
-	height: 8vh;
+	width: 7vw;
+	height: 10vh;
 	display: flex;
 }
 
