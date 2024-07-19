@@ -13,8 +13,43 @@ let products = [
 	},
 	{
 		id: 2,
-		name: "Бургер",
-		price: "200"
+		name: "Хот-дог",
+		price: "220"
+	},
+	{
+		id: 3,
+		name: "Картофель фри",
+		price: "130"
+	},
+	{
+		id: 4,
+		name: "Паннакотик",
+		price: "210"
+	},
+	{
+		id: 5,
+		name: 'Маффин "Чик"',
+		price: "150"
+	},
+	{
+		id: 6,
+		name: "Мороженое",
+		price: "120"
+	},
+	{
+		id: 7,
+		name: "Капучино",
+		price: "210"
+	},
+	{
+		id: 8,
+		name: 'Айс латте',
+		price: "250"
+	},
+	{
+		id: 9,
+		name: "Лимонад",
+		price: "150"
 	}
 ]
 
@@ -24,21 +59,36 @@ let cart = [];
 
 $('.btn').on('click', function () {
 	var parent = $(this).parent();
-	$(this).hide()
-	parent.find('.price').show();
-	parent.find('.counter').show()
-	parent.find('.counter').text('1')
-	var food = $(parent.find('.item-info')[0])
-	var id = Number(food.attr('id').replace('food', ''))
-	cart.push(
-		{
-			product: products.find(elem => elem.id == id),
-			count: 1
-		}
-	)
-	console.log(cart)
-
-	$(document).trigger('checkCart')
+	if($(this).hasClass('plus')) {
+		var parent = $(this).parent().parent();
+		var food = $(parent.find('.item-info')[0])
+		var id = Number(food.attr('id').replace('food', ''))
+		var product = updateCounter(id, 'plus')
+		var counter = parent.find('.counter')
+		counter.text(product.count)
+		counter.addClass('counter-click')
+		setTimeout(function(){ 
+			counter.removeClass('counter-click');
+		},200);
+		console.log(cart)
+	} else {
+		$(this).addClass('plus');	
+		$(this).text('+')
+		parent.find('.minus').show();
+		//parent.parent().find('.img-container').css('margin-left', '20px');
+		parent.parent().find('.counter').show()
+		parent.parent().find('.counter').text('1')
+		var food = $(parent.parent().find('.item-info')[0])
+		var id = Number(food.attr('id').replace('food', ''))
+		cart.push(
+			{
+				product: products.find(elem => elem.id == id),
+				count: 1
+			}
+		)
+		console.log(cart)
+		$(document).trigger('checkCart')
+	}
 })
 
 $(document).on('checkCart', function () {
@@ -50,15 +100,6 @@ $(document).on('checkCart', function () {
 	}
 })
 
-$('.plus').on('click', function () {
-	var parent = $(this).parent().parent();
-	var food = $(parent.find('.item-info')[0])
-	var id = Number(food.attr('id').replace('food', ''))
-	var product = updateCounter(id, 'plus')
-	parent.find('.counter').text(product.count)
-	console.log(cart)
-})
-
 $('.minus').on('click', function () {
 	var parent = $(this).parent().parent();
 	var food = $(parent.find('.item-info')[0])
@@ -67,10 +108,18 @@ $('.minus').on('click', function () {
 	if(product.count == 0) {
 		cart = cart.filter(elem => elem.count != 0);
 		$(parent.find('.counter')[0]).hide()
-		$(parent.find('.price')[0]).hide();
-		$(parent.find('.btn')[0]).show();
+		//$(parent.find('.img-container')[0]).css('margin-left', '0')
+		var btn = $(parent.find('.btn')[0])
+		btn.removeClass('plus');
+		btn.text('ADD')
+		$(this).hide()
 	} else {
-		parent.find('.counter').text(product.count)
+		var counter = parent.find('.counter')
+		counter.text(product.count)
+		counter.addClass('counter-click')
+		setTimeout(function(){ 
+			counter.removeClass('counter-click');
+		},200);
 	}
 	console.log(cart)
 	$(document).trigger('checkCart')

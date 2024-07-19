@@ -26,26 +26,45 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 200px;
+	min-width: 200px;
 }
 
-.btn {
-	display: inline-block;
+.btn, .minus {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: 10px 20px;
 	border: none;
 	background: rgb(248, 168, 24);
 	border-radius: 10px;
+	width: 80px;
+	height: 40px;
+	font-size: 20px;
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
-	margin-left: 15px;
+	text-align: center;
+	font-weight: bold;
 	margin-top: 7px;
 	cursor: pointer;
-	transition: background .2s linear;
+	transition: width .15s ease;
+}
+
+.plus, .minus {
+	width: 40px;
+}
+
+.minus {
+	background-color: rgb(255, 39, 39);
+	margin-right: 5px;
+}
+
+.minus:hover {
+	background: rgb(255, 91, 91);
 }
 
 .btn:hover {
-	background: lightgreen;
+	background: rgb(255, 192, 75);
 }
 
 .usercard {
@@ -80,17 +99,23 @@ body {
 	justify-content: center;
 	margin-top: 7px;
 	font-size: 14px;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     border-radius: 6px;
     background-color: #ebad5b;
 	font-weight: bold;
 	color: white;
+	transition: transform 0.2s;
+}
+
+.counter-click {
+	transform: scale(1.2);
 }
 
 .img-container {
+	width: 100px;
+	height: 100px;
 	display: flex;
-	margin-left: 15px;
 }
 
 .cart {
