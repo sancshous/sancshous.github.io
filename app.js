@@ -18,7 +18,7 @@ let products = [
 	},
 	{
 		id: 3,
-		name: "Картофель фри",
+		name: "Картошка",
 		price: "130"
 	},
 	{
@@ -28,7 +28,7 @@ let products = [
 	},
 	{
 		id: 5,
-		name: 'Маффин "Чик"',
+		name: 'Маффин',
 		price: "150"
 	},
 	{
